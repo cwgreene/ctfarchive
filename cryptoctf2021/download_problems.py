@@ -5,11 +5,11 @@ import re
 
 import supersecret
 XSRF_TOKEN=supersecret.getSecret("cryptoctf2021", "X-CSRF-TOKEN")
-crypto_ctf_session=supersecret.getSecret("cryptoctf2021", "crypto_ctf_token")
+CRYPTO_CTF_SESSION=supersecret.getSecret("cryptoctf2021", "crypto_ctf_token")
 
 COOKIES = {
     "XSRF_TOKEN": XSRF_TOKEN,
-    "crypto_ctf_session": crypto_ctf_session
+    "crypto_ctf_session": CRYPTO_CTF_SESSION
 }
 
 def get_problems(force = False, cache=True):
@@ -18,10 +18,7 @@ def get_problems(force = False, cache=True):
             challenges = problems.read()
     else:
         challenges_resp = requests.get("https://cr.yp.toc.tf/challenges/list",
-            cookies={
-                "XSRF_TOKEN": XSRF_TOKEN,
-                "crypto_ctf_session": crypto_ctf_session
-            })
+            cookies=COOKIES)
         if challenges_resp.status_code != 200:
             raise Exception(f"Could not get challenges [{challenges_resp.status_code}]:\n{challenges_resp.content}")
         if cache:
