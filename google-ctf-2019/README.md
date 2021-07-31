@@ -1,4 +1,4 @@
-Google ctf available here: 
+Google CTF 2019 available here:
 
 https://https://github.com/google/google-ctf/tree/master/2019
 
