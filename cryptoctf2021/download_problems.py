@@ -18,7 +18,7 @@ def get_problems(force = False, cache=True):
             challenges = problems.read()
     else:
         challenges_resp = requests.get("https://cr.yp.toc.tf/challenges/list",
-            cookies=COOKIES
+            cookies=COOKIES)
         if challenges_resp.status_code != 200:
             raise Exception(f"Could not get challenges [{challenges_resp.status_code}]:\n{challenges_resp.content}")
         if cache:
