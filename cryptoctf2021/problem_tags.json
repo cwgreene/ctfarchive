@@ -1,6 +1,7 @@
 {
-	"polish": [
-		"diophantine",
-		"rsa"
-	]
+    "polish": [
+        "crypto",
+        "diophantine",
+        "rsa"
+    ]
 }
