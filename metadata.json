@@ -1,14 +1,1 @@
-{
-  "ctfs": [
-    "cryptoctf2021",
-    "google-ctf-2017",
-    "google-ctf-2018",
-    "google-ctf-2019",
-    "google-ctf-2020",
-    "google-ctf-2021",
-    "hackasat-2020",
-    "hackasat-2021",
-    "redpwn-2020",
-    "redpwn-2021"
-  ]
-}
+{"ctfs": ["cryptoctf2021", "google-ctf-2017", "google-ctf-2018", "google-ctf-2019", "google-ctf-2020", "google-ctf-2021", "hackasat-2020", "hackasat-2021", "redpwn-2020", "redpwn-2021", "squarectf-2017", "squarectf-2018", "squarectf-2019", "squarectf-2020"]}
