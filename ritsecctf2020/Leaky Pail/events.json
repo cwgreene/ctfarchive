@@ -1,0 +1,732 @@
+{
+    "Records": [
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789098",
+                "arn": "arn:aws:iam::123456789098:root",
+                "accountId": "123456789098",
+                "accessKeyId": "ASIAREDACTED",
+                "sessionContext": {
+                    "sessionIssuer": {},
+                    "webIdFederationData": {},
+                    "attributes": {
+                        "creationDate": "2022-03-28T21:30:40Z",
+                        "mfaAuthenticated": "false"
+                    }
+                }
+            },
+            "eventTime": "2022-03-28T23:24:10Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "CreateTags",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "AWS Internal",
+            "userAgent": "AWS Internal",
+            "requestParameters": {
+                "resourcesSet": {
+                    "items": [
+                        {
+                            "resourceId": "i-09aaaaaaaaaa99999"
+                        }
+                    ]
+                },
+                "tagSet": {
+                    "items": [
+                        {
+                            "key": "hosting",
+                            "value": "cyberdelia[.]online"
+                        }
+                    ]
+                }
+            },
+            "responseElements": {
+                "requestId": "2dd9aa1e-582b-4bc5-ac7b-49b1017aa173",
+                "_return": true
+            },
+            "requestID": "2dd9aa1e-582b-4bc5-ac7b-49b1017aa173",
+            "eventID": "a10796ba-1a8f-43fd-bd2d-2eabdee57c8b",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789098",
+            "eventCategory": "Management",
+            "sessionCredentialFromConsole": "true"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "accountId": "123456789098",
+                "invokedBy": "ec2.amazonaws.com"
+            },
+            "eventTime": "2022-03-28T23:22:56Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "SharedSnapshotVolumeCreated",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "ec2.amazonaws.com",
+            "userAgent": "ec2.amazonaws.com",
+            "requestParameters": null,
+            "responseElements": null,
+            "eventID": "a4b81c22-15b4-4fd1-934f-260573f70362",
+            "readOnly": false,
+            "eventType": "AwsServiceEvent",
+            "managementEvent": true,
+            "recipientAccountId": "123456789098",
+            "sharedEventID": "c9fa565b-623b-4e04-9f52-ef82ec19eca5",
+            "serviceEventDetails": {
+                "snapshotId": "snap-asdfasdfasdf"
+            },
+            "eventCategory": "Management"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789098",
+                "arn": "arn:aws:iam::123456789098:root",
+                "accountId": "123456789098",
+                "accessKeyId": "ASIAREDACTED",
+                "sessionContext": {
+                    "sessionIssuer": {},
+                    "webIdFederationData": {},
+                    "attributes": {
+                        "creationDate": "2022-03-28T21:30:40Z",
+                        "mfaAuthenticated": "false"
+                    }
+                }
+            },
+            "eventTime": "2022-03-28T23:22:54Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "RunInstances",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "AWS Internal",
+            "userAgent": "AWS Internal",
+            "requestParameters": {
+                "instancesSet": {
+                    "items": [
+                        {
+                            "imageId": "ami-asdfasdfasdf",
+                            "minCount": 1,
+                            "maxCount": 1,
+                            "keyName": "prooxy_access"
+                        }
+                    ]
+                },
+                "groupSet": {
+                    "items": [
+                        {
+                            "groupId": "sg-asdfasdfasdf"
+                        }
+                    ]
+                },
+                "instanceType": "t2.micro",
+                "blockDeviceMapping": {
+                    "items": [
+                        {
+                            "deviceName": "/dev/sda1",
+                            "ebs": {
+                                "volumeSize": 8,
+                                "deleteOnTermination": true,
+                                "volumeType": "gp2"
+                            }
+                        },
+                        {
+                            "deviceName": "/dev/sdb",
+                            "noDevice": {}
+                        },
+                        {
+                            "deviceName": "/dev/sdc",
+                            "noDevice": {}
+                        }
+                    ]
+                },
+                "tenancy": "default",
+                "monitoring": {
+                    "enabled": false
+                },
+                "disableApiTermination": false,
+                "disableApiStop": false,
+                "instanceInitiatedShutdownBehavior": "stop",
+                "ebsOptimized": false,
+                "tagSpecificationSet": {
+                    "items": [
+                        {
+                            "resourceType": "instance",
+                            "tags": [
+                                {
+                                    "key": "application",
+                                    "value": "git:yung-g4ngst3r360noscope/prooxy"
+                                },
+                                {
+                                    "key": "magic",
+                                    "value": "yldzzf9vi5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "creditSpecification": {
+                    "cpuCredits": "standard"
+                },
+                "capacityReservationSpecification": {
+                    "capacityReservationPreference": "open"
+                },
+                "hibernationOptions": {
+                    "configured": false
+                },
+                "metadataOptions": {
+                    "httpTokens": "optional",
+                    "httpPutResponseHopLimit": 1,
+                    "httpEndpoint": "enabled",
+                    "instanceMetadataTags": "disabled"
+                },
+                "privateDnsNameOptions": {
+                    "hostnameType": "ip-name",
+                    "enableResourceNameDnsARecord": true,
+                    "enableResourceNameDnsAAAARecord": false
+                }
+            },
+            "responseElements": {
+                "requestId": "882f84af-0363-4c4e-8ea3-015856eec929",
+                "reservationId": "r-asdfasdf",
+                "ownerId": "123456789098",
+                "groupSet": {},
+                "instancesSet": {
+                    "items": [
+                        {
+                            "instanceId": "i-09aaaaaaaaaa99999",
+                            "imageId": "ami-asdfasdfasdf",
+                            "instanceState": {
+                                "code": 0,
+                                "name": "pending"
+                            },
+                            "privateDnsName": "ip-172-1-1-1.ec2.internal",
+                            "keyName": "prooxy_access",
+                            "amiLaunchIndex": 0,
+                            "productCodes": {},
+                            "instanceType": "t2.micro",
+                            "launchTime": 1648509773000,
+                            "placement": {
+                                "availabilityZone": "us-east-1a",
+                                "tenancy": "default"
+                            },
+                            "monitoring": {
+                                "state": "disabled"
+                            },
+                            "subnetId": "subnet-zzxcv",
+                            "vpcId": "vpc-tyuityuityui",
+                            "privateIpAddress": "172.1.1.1",
+                            "stateReason": {
+                                "code": "pending",
+                                "message": "pending"
+                            },
+                            "architecture": "x86_64",
+                            "rootDeviceType": "ebs",
+                            "rootDeviceName": "/dev/sda1",
+                            "blockDeviceMapping": {},
+                            "virtualizationType": "hvm",
+                            "hypervisor": "xen",
+                            "tagSet": {
+                                "items": [
+                                    {
+                                        "key": "application",
+                                        "value": "gh:yung-g4ngst3r360noscope/prooxy"
+                                    },
+                                    {
+                                        "key": "magic",
+                                        "value": "yldzzf9vi5"
+                                    }
+                                ]
+                            },
+                            "groupSet": {
+                                "items": [
+                                    {
+                                        "groupId": "sg-asdfasdfasdf",
+                                        "groupName": "launch-wizard-1"
+                                    }
+                                ]
+                            },
+                            "sourceDestCheck": true,
+                            "networkInterfaceSet": {
+                                "items": [
+                                    {
+                                        "networkInterfaceId": "eni-q3wer21",
+                                        "subnetId": "subnet-qrqwe23r1",
+                                        "vpcId": "vpc-asdf1a3s",
+                                        "ownerId": "123456789098",
+                                        "status": "in-use",
+                                        "macAddress": "12:3e:78:bb:bb:bb",
+                                        "privateIpAddress": "172.1.1.1",
+                                        "privateDnsName": "ip-172-1-1-1.ec2.internal",
+                                        "sourceDestCheck": true,
+                                        "interfaceType": "interface",
+                                        "groupSet": {
+                                            "items": [
+                                                {
+                                                    "groupId": "sg-asdfasdfas",
+                                                    "groupName": "launch-wizard-1"
+                                                }
+                                            ]
+                                        },
+                                        "attachment": {
+                                            "attachmentId": "eni-attach-asdfasdfasd",
+                                            "deviceIndex": 0,
+                                            "networkCardIndex": 0,
+                                            "status": "attaching",
+                                            "attachTime": 1648509773000,
+                                            "deleteOnTermination": true
+                                        },
+                                        "privateIpAddressesSet": {
+                                            "item": [
+                                                {
+                                                    "privateIpAddress": "172.1.1.1",
+                                                    "privateDnsName": "ip-172-1-1-1.ec2.internal",
+                                                    "primary": true
+                                                }
+                                            ]
+                                        },
+                                        "ipv6AddressesSet": {},
+                                        "tagSet": {}
+                                    }
+                                ]
+                            },
+                            "ebsOptimized": false,
+                            "enaSupport": true,
+                            "cpuOptions": {
+                                "coreCount": 1,
+                                "threadsPerCore": 1
+                            },
+                            "capacityReservationSpecification": {
+                                "capacityReservationPreference": "open"
+                            },
+                            "hibernationOptions": {
+                                "configured": false
+                            },
+                            "enclaveOptions": {
+                                "enabled": false
+                            },
+                            "metadataOptions": {
+                                "state": "pending",
+                                "httpTokens": "optional",
+                                "httpPutResponseHopLimit": 1,
+                                "httpEndpoint": "enabled",
+                                "httpProtocolIpv4": "enabled",
+                                "httpProtocolIpv6": "disabled",
+                                "instanceMetadataTags": "disabled"
+                            },
+                            "privateDnsNameOptions": {
+                                "hostnameType": "ip-name",
+                                "enableResourceNameDnsARecord": true,
+                                "enableResourceNameDnsAAAARecord": false
+                            }
+                        }
+                    ]
+                }
+            },
+            "requestID": "882f84af-0363-4c4e-8ea3-015856eec929",
+            "eventID": "b7429417-a1a5-487b-bd5f-ebc21e98232f",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789098",
+            "eventCategory": "Management",
+            "sessionCredentialFromConsole": "true"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789098",
+                "arn": "arn:aws:iam::123456789098:root",
+                "accountId": "123456789098",
+                "accessKeyId": "ASIAREDACTED",
+                "sessionContext": {
+                    "sessionIssuer": {},
+                    "webIdFederationData": {},
+                    "attributes": {
+                        "creationDate": "2022-03-28T21:30:40Z",
+                        "mfaAuthenticated": "false"
+                    }
+                }
+            },
+            "eventTime": "2022-03-28T23:22:52Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "AuthorizeSecurityGroupIngress",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "AWS Internal",
+            "userAgent": "AWS Internal",
+            "requestParameters": {
+                "groupId": "sg-0ce4798b100520af4",
+                "ipPermissions": {
+                    "items": [
+                        {
+                            "ipProtocol": "tcp",
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "groups": {},
+                            "ipRanges": {
+                                "items": [
+                                    {
+                                        "cidrIp": "0.0.0.0/0"
+                                    }
+                                ]
+                            },
+                            "ipv6Ranges": {
+                                "items": [
+                                    {
+                                        "cidrIpv6": "::/0"
+                                    }
+                                ]
+                            },
+                            "prefixListIds": {}
+                        },
+                        {
+                            "ipProtocol": "tcp",
+                            "fromPort": 22,
+                            "toPort": 22,
+                            "groups": {},
+                            "ipRanges": {
+                                "items": [
+                                    {
+                                        "cidrIp": "REDACTED/32"
+                                    }
+                                ]
+                            },
+                            "ipv6Ranges": {},
+                            "prefixListIds": {}
+                        }
+                    ]
+                }
+            },
+            "responseElements": {
+                "requestId": "8097de85-e0b8-4125-926e-30a4578c2c2f",
+                "_return": true,
+                "securityGroupRuleSet": {
+                    "items": [
+                        {
+                            "groupOwnerId": "123456789098",
+                            "groupId": "sg-fghjfghjfghj",
+                            "securityGroupRuleId": "sgr-asdfasdf",
+                            "isEgress": false,
+                            "ipProtocol": "tcp",
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "cidrIpv4": "0.0.0.0/0"
+                        },
+                        {
+                            "groupOwnerId": "123456789098",
+                            "groupId": "sg-fghjfghjfghj",
+                            "securityGroupRuleId": "sgr-asdfasdf",
+                            "isEgress": false,
+                            "ipProtocol": "tcp",
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "cidrIpv6": "::/0"
+                        },
+                        {
+                            "groupOwnerId": "123456789098",
+                            "groupId": "sg-fghjfghjfghj",
+                            "securityGroupRuleId": "sgr-asdfasdf",
+                            "isEgress": false,
+                            "ipProtocol": "tcp",
+                            "fromPort": 22,
+                            "toPort": 22,
+                            "cidrIpv4": "REDACTED/32"
+                        }
+                    ]
+                }
+            },
+            "requestID": "8097de85-e0b8-4125-926e-30a4578c2c2f",
+            "eventID": "08f43abf-ef3a-4c4c-b826-55912b1600af",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789098",
+            "eventCategory": "Management",
+            "sessionCredentialFromConsole": "true"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789098",
+                "arn": "arn:aws:iam::123456789098:root",
+                "accountId": "123456789098",
+                "accessKeyId": "ASIAREDACTED",
+                "sessionContext": {
+                    "sessionIssuer": {},
+                    "webIdFederationData": {},
+                    "attributes": {
+                        "creationDate": "2022-03-28T21:30:40Z",
+                        "mfaAuthenticated": "false"
+                    }
+                }
+            },
+            "eventTime": "2022-03-28T23:22:51Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "CreateSecurityGroup",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "AWS Internal",
+            "userAgent": "AWS Internal",
+            "requestParameters": {
+                "groupName": "launch-wizard-1",
+                "groupDescription": "launch-wizard-1 created 2022-03-28T19:20:26.631-04:00",
+                "vpcId": "vpc-asdfasdf"
+            },
+            "responseElements": {
+                "requestId": "782b596f-7898-4324-815e-97f1998df2e6",
+                "_return": true,
+                "groupId": "sg-asdfasdf"
+            },
+            "requestID": "782b596f-7898-4324-815e-97f1998df2e6",
+            "eventID": "ef31af6f-d2f7-4915-aa70-4c84c6fede0f",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789098",
+            "eventCategory": "Management",
+            "sessionCredentialFromConsole": "true"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789098",
+                "arn": "arn:aws:iam::123456789098:root",
+                "accountId": "123456789098",
+                "accessKeyId": "ASIAREDACTED",
+                "sessionContext": {
+                    "sessionIssuer": {},
+                    "webIdFederationData": {},
+                    "attributes": {
+                        "creationDate": "2022-03-28T21:30:40Z",
+                        "mfaAuthenticated": "false"
+                    }
+                }
+            },
+            "eventTime": "2022-03-28T23:22:48Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "CreateKeyPair",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "AWS Internal",
+            "userAgent": "AWS Internal",
+            "requestParameters": {
+                "keyName": "prooxy_access",
+                "keyType": "rsa",
+                "keyFormat": "pem"
+            },
+            "responseElements": {
+                "requestId": "d666821d-6cb9-432c-91e4-fa64ecf2cd66",
+                "keyName": "prooxy_access",
+                "keyFingerprint": "b1:32:65:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa",
+                "keyPairId": "key-asdfasdf",
+                "keyMaterial": "<sensitiveDataRemoved>"
+            },
+            "requestID": "d666821d-6cb9-432c-91e4-fa64ecf2cd66",
+            "eventID": "2b3a0fb7-1625-4d60-a113-5c1b54cb178d",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789098",
+            "eventCategory": "Management",
+            "sessionCredentialFromConsole": "true"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789098",
+                "arn": "arn:aws:iam::123456789098:root",
+                "accountId": "123456789098",
+                "accessKeyId": "ASIAREDACTED",
+                "sessionContext": {
+                    "attributes": {
+                        "creationDate": "2022-03-28T21:45:40Z",
+                        "mfaAuthenticated": "false"
+                    }
+                }
+            },
+            "eventTime": "2022-03-28T23:50:05Z",
+            "eventSource": "s3.amazonaws.com",
+            "eventName": "PutObject",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "71.191.89.13",
+            "userAgent": "[Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0]",
+            "requestParameters": {
+                "X-Amz-Date": "20220330T015430Z",
+                "bucketName": "hold-my-secret-stuff-q673c5f6ns",
+                "X-Amz-Algorithm": "AWS4-HMAC-SHA256",
+                "x-amz-acl": "bucket-owner-full-control",
+                "X-Amz-SignedHeaders": "content-md5;content-type;host;x-amz-acl;x-amz-storage-class",
+                "Host": "hold-my-secret-stuff-q673c5f6ns.s3.us-east-1.amazonaws.com",
+                "X-Amz-Expires": "300",
+                "key": "flag.txt",
+                "x-amz-storage-class": "STANDARD"
+            },
+            "responseElements": null,
+            "additionalEventData": {
+                "SignatureVersion": "SigV4",
+                "CipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+                "bytesTransferredIn": 42.0,
+                "AuthenticationMethod": "QueryString",
+                "x-amz-id-2": "aaaaaaa/aaaa=",
+                "bytesTransferredOut": 0.0
+            },
+            "requestID": "asdfasdfasdf",
+            "eventID": "ec99ed11-4821-4e46-afb5-a1c6357090a5",
+            "readOnly": false,
+            "resources": [
+                {
+                    "type": "AWS::S3::Object",
+                    "ARN": "arn:aws:s3:::hold-my-secret-stuff-q673c5f6ns/flag.txt"
+                },
+                {
+                    "accountId": "123456789098",
+                    "type": "AWS::S3::Bucket",
+                    "ARN": "arn:aws:s3:::hold-my-secret-stuff-q673c5f6ns"
+                }
+            ],
+            "eventType": "AwsApiCall",
+            "managementEvent": false,
+            "recipientAccountId": "123456789098",
+            "eventCategory": "Data",
+            "tlsDetails": {
+                "tlsVersion": "TLSv1.2",
+                "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+                "clientProvidedHostHeader": "hold-my-secret-stuff-q673c5f6ns.s3.us-east-1.amazonaws.com"
+            }
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789098",
+                "arn": "arn:aws:iam::123456789098:root",
+                "accountId": "123456789098",
+                "accessKeyId": "ASIAREDACTED",
+                "sessionContext": {
+                    "sessionIssuer": {},
+                    "webIdFederationData": {},
+                    "attributes": {
+                        "creationDate": "2022-03-28T21:30:40Z",
+                        "mfaAuthenticated": "false"
+                    }
+                }
+            },
+            "eventTime": "2022-03-28T23:03:05Z",
+            "eventSource": "s3.amazonaws.com",
+            "eventName": "PutBucketPolicy",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "REDACTED",
+            "userAgent": "[S3Console/0.4, aws-internal/3 aws-sdk-java/1.11.1030 Linux/5.4.181-109.354.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.302-b08 java/1.8.0_302 vendor/Oracle_Corporation cfg/retry-mode/standard]",
+            "requestParameters": {
+                "bucketPolicy": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "SourceIP",
+                            "Action": "s3:*",
+                            "Effect": "Deny",
+                            "Resource": [
+                                "arn:aws:s3:::hold-my-secret-stuff-q673c5f6ns",
+                                "arn:aws:s3:::hold-my-secret-stuff-q673c5f6ns/*"
+                            ],
+                            "Condition": {
+                                "NotIpAddress": {
+                                    "aws:SourceIp": [
+                                        "REDACTED/32"
+                                    ]
+                                }
+                            },
+                            "Principal": "*"
+                        }
+                    ],
+                    "Id": "SourceIP"
+                },
+                "bucketName": "hold-my-secret-stuff-q673c5f6ns",
+                "Host": "s3.amazonaws.com",
+                "policy": ""
+            },
+            "responseElements": null,
+            "additionalEventData": {
+                "SignatureVersion": "SigV4",
+                "CipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+                "bytesTransferredIn": 457,
+                "AuthenticationMethod": "AuthHeader",
+                "x-amz-id-2": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+                "bytesTransferredOut": 0
+            },
+            "requestID": "JKL2FSD5668LSDF",
+            "eventID": "c3b77a0a-8d43-44bb-a12d-17fa458fd48f",
+            "readOnly": false,
+            "resources": [
+                {
+                    "accountId": "123456789098",
+                    "type": "AWS::S3::Bucket",
+                    "ARN": "arn:aws:s3:::hold-my-secret-stuff-q673c5f6ns"
+                }
+            ],
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789098",
+            "vpcEndpointId": "vpce-f40dc59d",
+            "eventCategory": "Management",
+            "tlsDetails": {
+                "tlsVersion": "TLSv1.2",
+                "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+                "clientProvidedHostHeader": "s3.amazonaws.com"
+            }
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789098",
+                "arn": "arn:aws:iam::123456789098:root",
+                "accountId": "123456789098",
+                "accessKeyId": "ASIAREDACTED",
+                "sessionContext": {
+                    "sessionIssuer": {},
+                    "webIdFederationData": {},
+                    "attributeAs": {
+                        "creationDate": "2022-03-28T21:30:40Z",
+                        "mfaAuthenticated": "false"
+                    }
+                }
+            },
+            "eventTime": "2022-03-28T23:02:07Z",
+            "eventSource": "s3.amazonaws.com",
+            "eventName": "CreateBucket",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "REDACTED",
+            "userAgent": "[S3Console/0.4, aws-internal/3 aws-sdk-java/1.11.1030 Linux/5.4.181-109.354.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.302-b08 java/1.8.0_302 vendor/Oracle_Corporation cfg/retry-mode/standard]",
+            "requestParameters": {
+                "bucketName": "hold-my-secret-stuff-q673c5f6ns",
+                "Host": "s3.amazonaws.com",
+                "x-amz-object-ownership": "BucketOwnerPreferred"
+            },
+            "responseElements": null,
+            "additionalEventData": {
+                "SignatureVersion": "SigV4",
+                "CipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+                "bytesTransferredIn": 0,
+                "AuthenticationMethod": "AuthHeader",
+                "x-amz-id-2": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+                "bytesTransferredOut": 0
+            },
+            "requestID": "AAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "eventID": "18d34aaa-3eb6-432c-9542-b4e140c8169c",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789098",
+            "vpcEndpointId": "vpce-sdfgsdfg",
+            "eventCategory": "Management",
+            "tlsDetails": {
+                "tlsVersion": "TLSv1.2",
+                "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+                "clientProvidedHostHeader": "s3.amazonaws.com"
+            }
+        }
+    ]
+}
