@@ -21,7 +21,7 @@ def main():
     if not os.path.exists(options.root_dir):
         pathlib.Path(options.root_dir).mkdir(parents=True, exist_ok=True)       
 
-    challenges = requests.get(f"{options.api_url}challenges", headers = {
+    challenges = requests.get(f"{options.api_url}/challenges", headers = {
                 "Cookie": f"session={session}"
             })
     problems = json.loads(challenges.content)
