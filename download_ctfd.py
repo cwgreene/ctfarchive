@@ -13,12 +13,11 @@ def download(s, source, dest):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--session", required=True)
+    parser.add_argument("--session", required=True, help="session token")
     parser.add_argument("--force", action="store_true")
-    parser.add_argument("--host", required=True)
-    parser.add_argument("--root-url", required=True)
+    parser.add_argument("--root-url", required=True, help="url of challenges")
     parser.add_argument("--api-url", action="store_true", default=None)
-    parser.add_argument("--root-dir", required=True)
+    parser.add_argument("--root-dir", required=True, help="target output dir")
     options = parser.parse_args()
     session = options.session
     if options.api_url is None:
