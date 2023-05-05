@@ -6,20 +6,25 @@ import sys
 import pathlib
 from hyper.contrib import HTTP20Adapter
 
-def download(s, source, dest):
-    res = s.get(source)
+def get_with_bearer(s, bearer, url):
+    return s.get(url, headers = {
+        "Authorization": f"Bearer {bearer}",
+    })
+
+def download(s, bearer, source, dest):
+    res = get_with_bearer(s, bearer, source)
     with open(dest, "wb") as target_file:
         target_file.write(res.content)
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--session", required=True, help="session token")
+    parser.add_argument("--bearer-token", required=True, help="bearer token")
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--root-url", required=True, help="url of challenges")
     parser.add_argument("--api-url", action="store_true", default=None)
     parser.add_argument("--root-dir", required=True, help="target output dir")
     options = parser.parse_args()
-    session = options.session
+    bearer = options.bearer_token
     if options.api_url is None:
         options.api_url = f"{options.root_url}/api/v1"
 
@@ -30,9 +35,7 @@ def main():
     s.mount(f'{options.api_url}', HTTP20Adapter())
 
     print(f"Obtaining challenges from {options.api_url}/challs")
-    challenges = s.get(f"{options.api_url}/challs", headers = {
-                "Cookie": f"session={session}",
-            })
+    challenges = get_with_beraer(s, bearer, f"{options.api_url}/challs")
     problems = json.loads(challenges.content)
 
     for chal in problems:
@@ -65,7 +68,7 @@ def main():
                 print(f"'{file_name}' is downloaded")
                 continue
             print(f"'{file_name}' is being downloaded...")
-            download(s, f"{options.root_url}/{f}", f"{target_dir}/{file_name}")
+            download(s, bearer, f"{options.root_url}/{f}", f"{target_dir}/{file_name}")
 
 if __name__ == "__main__":
     main()
