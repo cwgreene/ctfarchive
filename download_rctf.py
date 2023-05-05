@@ -68,7 +68,8 @@ def main():
                 print(f"'{file_name}' is downloaded")
                 continue
             print(f"'{file_name}' is being downloaded...")
-            download(s, bearer, f"{options.root_url}/{f}", f"{target_dir}/{file_name}")
+            # TODO: we should dynamically determine if the path is relative or not
+            download(s, bearer, f"{f}", f"{target_dir}/{file_name}")
 
 if __name__ == "__main__":
     main()
