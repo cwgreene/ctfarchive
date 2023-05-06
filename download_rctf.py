@@ -8,6 +8,7 @@ from hyper.contrib import HTTP20Adapter
 
 def get_with_bearer(s, bearer, url):
     return s.get(url, headers = {
+        "Content-Type": "application/json",
         "Authorization": f"Bearer {bearer}",
     })
 
@@ -34,11 +35,11 @@ def main():
     s = requests.Session()
     s.mount(f'{options.api_url}', HTTP20Adapter())
 
-    print(f"Obtaining challenges from {options.api_url}/challs")
-    challenges = get_with_beraer(s, bearer, f"{options.api_url}/challs")
+    print(f"Obtaining challenges from {options.api_url}/challs", f"{options.api_url}/challs")
+    challenges = get_with_bearer(s, bearer, f"{options.api_url}/challs")
     problems = json.loads(challenges.content)
 
-    for chal in problems:
+    for chal in problems["data"]:
         print(f"Downloading {chal['name']}...")
 
         # Generate Directory for Challenge (if it doesn't exist)
@@ -52,8 +53,8 @@ def main():
         # Save chal to json
         problem_filename = f"{target_dir}/problem.json"
         if not os.path.exists(problem_filename) or options.force:
-            result = json.stringify(chal)
-            with open(problem_filename, "wb") as probfile:
+            result = json.dumps(chal)
+            with open(problem_filename, "w") as probfile:
                 probfile.write(result)
         else:
             with open(problem_filename) as probfile:
@@ -61,6 +62,7 @@ def main():
     
         # Load back stringified reuslt (could use chal directly, but this is for
         # consistency with ctfd.
+        print(result)
         problem = json.loads(result)
         for f in problem["files"]:
             file_name = f.split("?")[0].split("/")[-1]
