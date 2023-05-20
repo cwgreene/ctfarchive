@@ -2,3 +2,4 @@
 *.jpg filter=lfs diff=lfs merge=lfs -text
 tsjctf/w4nn4cryp7/w4nn4cryp7.zip filter=lfs diff=lfs merge=lfs -text
 *.gif filter=lfs diff=lfs merge=lfs -text
+ritsec2023/Frequent[[:space:]]Frequency/frequent_frequency.c32 filter=lfs diff=lfs merge=lfs -text
