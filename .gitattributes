@@ -1,5 +1,8 @@
 *.zip filter=lfs diff=lfs merge=lfs -text
+*.gz filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 tsjctf/w4nn4cryp7/w4nn4cryp7.zip filter=lfs diff=lfs merge=lfs -text
 *.gif filter=lfs diff=lfs merge=lfs -text
 ritsec2023/Frequent[[:space:]]Frequency/frequent_frequency.c32 filter=lfs diff=lfs merge=lfs -text
+*ld-linux-x86-64.so.2 filter=lfs diff=lfs merge=lfs -text
+*libc.so.6 filter=lfs diff=lfs merge=lfs -text
