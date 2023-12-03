@@ -21,7 +21,7 @@ def get_with_bearer(s, bearer, url):
 def download(s, bearer, source, dest):
     res = get_with_bearer(s, bearer, source)
     print(res)
-    if res.status != 200:
+    if res.status_code != 200:
         raise Exception("Oh Noes!")
     with open(dest, "wb") as target_file:
         target_file.write(res.content)
@@ -74,14 +74,19 @@ def main():
         print(result)
         problem = json.loads(result)
         for f in problem["files"]:
-            print(f)
-            file_name = f.split("?")[0].split("/")[-1]
+            if type(f) == dict:
+                file_name = f["name"]
+                url = options.root_url+f"{f['url']}"
+                print(url)
+            else:
+                file_name = f.split("?")[0].split("/")[-1]
+                url = f
             if os.path.exists(f"{target_dir}/{file_name}") and not options.force:
                 print(f"'{file_name}' is downloaded")
                 continue
             print(f"'{file_name}' is being downloaded...")
             # TODO: we should dynamically determine if the path is relative or not
-            download(s, bearer, f"{f}", f"{target_dir}/{file_name}")
+            download(s, bearer, f"{url}", f"{target_dir}/{file_name}")
 
 if __name__ == "__main__":
     main()
