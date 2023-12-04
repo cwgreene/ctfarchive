@@ -26,6 +26,15 @@ def download(s, bearer, source, dest):
     with open(dest, "wb") as target_file:
         target_file.write(res.content)
 
+def remove_trailing_slash(url):
+    if url.endswith("/"):
+        return url[:-1]
+    return url
+
+def join_url(*args):
+    normalized_args = [remove_trailing_slash(part) for part in args]
+    return "/".join(normalized_args)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--bearer-token", required=True, help="bearer token")
@@ -35,8 +44,10 @@ def main():
     parser.add_argument("--root-dir", required=True, help="target output dir")
     options = parser.parse_args()
     bearer = options.bearer_token
+    options.root_url = remove_trailing_slash(options.root_url)
     if options.api_url is None:
         options.api_url = f"{options.root_url}/api/v1"
+    options.api_url = remove_trailing_slash(options.api_url)
 
     if not os.path.exists(options.root_dir):
         pathlib.Path(options.root_dir).mkdir(parents=True, exist_ok=True)       
@@ -76,7 +87,7 @@ def main():
         for f in problem["files"]:
             if type(f) == dict:
                 file_name = f["name"]
-                url = options.root_url+f"{f['url']}"
+                url = join_url(options.root_url, f"{f['url']}")
                 print(url)
             else:
                 file_name = f.split("?")[0].split("/")[-1]
