@@ -18,6 +18,11 @@ def get_with_bearer(s, bearer, url):
         "Authorization": f"Bearer {bearer}",
     })
 
+def is_url_relative(url):
+    if url.startswith("https:") or url.startswith("http:"):
+        return False
+    return True
+
 def download(s, bearer, source, dest):
     res = get_with_bearer(s, bearer, source)
     print(res)
@@ -87,7 +92,9 @@ def main():
         for f in problem["files"]:
             if type(f) == dict:
                 file_name = f["name"]
-                url = join_url(options.root_url, f"{f['url']}")
+                url = f["url"]
+                if is_url_relative(url):
+                    url = join_url(options.root_url, f"{f['url']}")
                 print(url)
             else:
                 file_name = f.split("?")[0].split("/")[-1]
